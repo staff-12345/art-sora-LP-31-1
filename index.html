@@ -82,7 +82,6 @@
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center" style="background-image: url('https://cdn.mos.cms.futurecdn.net/aecL2Kp38pnVx468C4eX5a-1200-80.jpg'); background-size: cover; background-position: center;">
         <div class="overlay absolute inset-0"></div>
         <div class="relative z-10 text-center text-white px-4 max-w-4xl">
@@ -93,15 +92,14 @@
                 住まいを起点に、仕事・人間関係など生活全体を見直し、<br>新しい環境に挑戦しましょう。
             </p>
             <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
-                <button class="cta-button text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg block w-full md:w-auto">
+                <a href="#contact-form" class="cta-button text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg block w-full md:w-auto">
                     <i class="fas fa-file-alt mr-2"></i>
                     今すぐ資料請求・無料相談
-                </button>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Benefits Section -->
     <section class="section-padding bg-white">
         <div class="container mx-auto px-4">
             <h2 class="section-title">住まいから広がる、新しい暮らし</h2>
@@ -137,15 +135,14 @@
             </div>
             
             <div class="text-center">
-                <button class="cta-button text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg">
+                <a href="#contact-form" class="cta-button text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg">
                     <i class="fas fa-file-alt mr-2"></i>
                     今すぐ資料請求・無料相談
-                </button>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Service Overview Section -->
     <section class="section-padding bg-gray-50">
         <div class="container mx-auto px-4">
             <h2 class="section-title">アート・宙のサービス特徴</h2>
@@ -186,7 +183,6 @@
         </div>
     </section>
 
-    <!-- Trust & Quality Section -->
     <section class="section-padding bg-white">
         <div class="container mx-auto px-4">
             <h2 class="section-title">安心・安全への取り組み</h2>
@@ -219,7 +215,6 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <section class="section-padding bg-gray-50">
         <div class="container mx-auto px-4">
             <h2 class="section-title">よくある質問</h2>
@@ -251,15 +246,14 @@
             </div>
             
             <div class="text-center mt-12">
-                <button class="cta-button text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg">
+                <a href="#contact-form" class="cta-button text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg">
                     <i class="fas fa-file-alt mr-2"></i>
                     今すぐ資料請求・無料相談
-                </button>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA Section -->
     <section class="section-padding hero-gradient text-white">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold mb-6">あなたの理想の暮らしを実現しませんか？</h2>
@@ -268,15 +262,57 @@
                 まずはお気軽にご相談ください。
             </p>
             <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
-                <button class="bg-white text-teal-600 px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:bg-gray-100 transition-colors block w-full md:w-auto">
+                <a href="#contact-form" class="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:bg-gray-100 transition-colors block w-full md:w-auto">
                     <i class="fas fa-file-alt mr-2"></i>
                     今すぐ資料請求・無料相談
-                </button>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section id="contact-form" class="section-padding bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title">資料請求フォーム</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                以下のフォームにご入力の上、送信してください。担当者より折り返しご連絡いたします。
+            </p>
+            <div class="max-w-4xl mx-auto">
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-gray-700 font-semibold mb-2">氏名 <span class="text-red-500">*</span></label>
+                        <input type="text" id="name" name="name" placeholder="例：山田 太郎" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    </div>
+                    <div>
+                        <label for="furigana" class="block text-gray-700 font-semibold mb-2">氏名 (フリガナ) <span class="text-red-500">*</span></label>
+                        <input type="text" id="furigana" name="furigana" placeholder="例：ヤマダ タロウ" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    </div>
+                    <div>
+                        <label for="address" class="block text-gray-700 font-semibold mb-2">住所</label>
+                        <input type="text" id="address" name="address" placeholder="例：三重県四日市市北町3-4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-gray-700 font-semibold mb-2">電話番号 <span class="text-red-500">*</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="例：090-1234-5678" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 font-semibold mb-2">メールアドレス <span class="text-red-500">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="例：example@email.com" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    </div>
+                    <div>
+                        <label for="remarks" class="block text-gray-700 font-semibold mb-2">備考</label>
+                        <textarea id="remarks" name="remarks" rows="5" placeholder="ご質問やご相談したい内容をご自由にお書きください。" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
+                    </div>
+                    <div class="text-center pt-6">
+                        <button type="submit" class="cta-button text-white px-12 py-4 rounded-full font-semibold text-lg shadow-lg">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            この内容で送信する
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <footer class="company-info py-12">
         <div class="container mx-auto px-4">
             <div class="text-center">
