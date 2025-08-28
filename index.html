@@ -26,8 +26,11 @@
         .company-info { background: #f8fafc; border-top: 3px solid #2dd4bf; }
 
         /* 日本語の不自然な分割を抑止 */
-        .jp-body { line-break: strict; word-break: normal; }
+        .jp-body { line-break: strict; word-break: keep-all; }
         .nb { white-space: nowrap; }
+
+        /* 見出しの日本語割れ対策 */
+        .jp-heading { line-break: strict; word-break: keep-all; }
 
         @media (max-width: 768px) {
             .section-padding { padding: 2rem 0; }
@@ -46,8 +49,8 @@
     <section class="relative min-h-screen flex items-center justify-center" style="background-image: url('https://i.postimg.cc/JnXYZdxk/RE-1.jpg'); background-size: cover; background-position: center;">
         <div class="overlay absolute inset-0"></div>
         <div class="relative z-10 text-center text-white px-4 max-w-4xl">
-            <h1 class="text-5xl md:text-6xl font-bold mb-6 text-shadow">
-                住まいを起点に、<br>人生をアップデート
+            <h1 class="jp-heading text-5xl md:text-6xl font-bold mb-6 text-shadow">
+                住まいを起点に、<span class="hidden md:inline"><br></span>人生を<span class="nb">アップデート</span>
             </h1>
             <p class="text-xl md:text-2xl mb-8 text-shadow">
                 三重県で<span class="nb">リフォーム・リノベーション</span>するなら<span class="nb">アート・宙</span>
@@ -70,7 +73,6 @@
             </p>
 
             <div class="grid md:grid-cols-3 gap-8 mb-16">
-                <!-- 1枚目カード：ご指定の3行に固定 -->
                 <div class="text-center hover-lift">
                     <div class="mb-6">
                         <img src="https://i.postimg.cc/qM4D6w3N/RE-4.jpg" alt="木の温かみを感じる玄関" class="benefit-image w-full">
@@ -202,18 +204,24 @@
 <!-- 電話CTA：短時間の多重起動をページ全体で抑止（ネイティブtelはそのまま起動） -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  // 連続タップによる「自動開始」判定を避けるため、一定時間は全telリンクを無効化
   let cooling = false;
+  let lastDial = 0;
+
   document.addEventListener('click', function(e) {
     const a = e.target.closest && e.target.closest('a[href^="tel:"]');
     if (!a) return;
 
-    if (cooling) {
+    const now = Date.now();
+    // 直近の発呼から8秒は無効化（必要なら調整可）
+    if (cooling || (now - lastDial) < 8000) {
       e.preventDefault();
       return;
     }
+    lastDial = now;
     cooling = true;
-    setTimeout(function(){ cooling = false; }, 2000);
-    // JSからtel:を起動しない（<a href="tel:...">のネイティブ動作に委ねる）
+    setTimeout(function(){ cooling = false; }, 8000);
+    // JSでtel:を起動しない（<a href="tel:...">のネイティブ動作に委ねる）
   }, true);
 });
 </script>
